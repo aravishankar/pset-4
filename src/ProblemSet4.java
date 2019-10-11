@@ -28,7 +28,7 @@ public class ProblemSet4 {
         // comment out or uncomment as needed
         
         ps.sum();
-        ps.reverse();
+//        ps.reverse();
         ps.digits();
         ps.average();
         ps.prime();
@@ -52,6 +52,30 @@ public class ProblemSet4 {
      */
     
     public void sum() {
+        
+        long sum = 0;
+        long lowerBound;
+        long upperBound;
+
+        System.out.println("");
+
+        do 
+        {
+            System.out.print("Lower bound: ");
+            lowerBound = in.nextLong();
+            System.out.print("Upper bound: ");
+            upperBound = in.nextLong();
+        } while (lowerBound > upperBound);
+
+        if ((lowerBound % 2) != 0) {
+            lowerBound = lowerBound+1;
+        } 
+
+        for (long i = lowerBound; i <= upperBound; i = i + 2) {
+            sum += i;
+        }
+
+        System.out.printf("\n%d.\n", sum);
 
     }
     
@@ -63,6 +87,19 @@ public class ProblemSet4 {
      */
     
     public void reverse() {
+        // System.out.print("\nPositive integer:  ");
+        // long input = in.nextLong();
+
+        // while (input < 1) {
+        //     System.out.print("\nPositive integer:  ");
+        //     input = in.nextLong();
+        // }
+
+        // String inputString = input.toString();
+
+        // for (int i = inputString.length(); i >= 0; i--) {
+
+        // }
 
     }
     

@@ -27,9 +27,9 @@ public class ProblemSet4 {
         
         // comment out or uncomment as needed
         
-        ps.sum();
+//       ps.sum();
 //        ps.reverse();
-        ps.digits();
+//        ps.digits();
         ps.average();
         ps.prime();
         ps.fibonacci();
@@ -87,19 +87,26 @@ public class ProblemSet4 {
      */
     
     public void reverse() {
-        // System.out.print("\nPositive integer:  ");
-        // long input = in.nextLong();
+        
+        long integer;
 
-        // while (input < 1) {
-        //     System.out.print("\nPositive integer:  ");
-        //     input = in.nextLong();
-        // }
+        do 
+        {
+            System.out.print("Positive Integer: ");
+            integer = in.nextLong();
+        } while (integer < 1);
+        String result = Long.toString(integer);
 
-        // String inputString = input.toString();
+        System.out.print("\n");
 
-        // for (int i = inputString.length(); i >= 0; i--) {
+        for (int i = result.length(); i > 0; i--) {
 
-        // }
+            if (i==1) {
+                System.out.printf("%s.\n", result.substring(i-1, i));
+            } else {
+                System.out.printf("%s, ", result.substring(i-1, i));
+            }
+        }
 
     }
     
@@ -111,6 +118,34 @@ public class ProblemSet4 {
      */
     
     public void digits() {
+        
+        long integer;
+        int sum = 0;
+        int additive;
+        
+        do 
+        {
+            System.out.print("Positive integer: ");
+            integer = in.nextLong();
+        } while (integer < 1);
+
+        String result = Long.toString(integer);
+
+        for (int i = result.length(); i > 0; i--) {
+
+            additive = Integer.parseInt(result.substring(i-1, i));
+            if (additive % 2 != 0) {
+                sum += additive;
+            }
+
+            // if (i==1) {
+            //     System.out.printf("%s.\n", result.substring(i-1, i));
+            // } else {
+            //     System.out.printf("%s, ", result.substring(i-1, i));
+            // }
+        }
+
+        System.out.printf("\n%d.\n", sum);
 
     }
     

@@ -27,16 +27,16 @@ public class ProblemSet4 {
         
         // comment out or uncomment as needed
         
-//       ps.sum();
-//        ps.reverse();
-//        ps.digits();
-//        ps.average();
-//        ps.prime();
-//        ps.fibonacci();
-//        ps.factors();
-//        ps.mario();
-//       ps.luigi();
-        ps.credit();
+       ps.sum();
+       ps.reverse();
+       ps.digits();
+       ps.average();
+       ps.prime();
+       ps.fibonacci();
+       ps.factors();
+       ps.mario();
+       ps.luigi();
+       ps.credit();
                 
         in.close();
     }
@@ -54,8 +54,8 @@ public class ProblemSet4 {
     public void sum() {
         
         long sum = 0;
-        long lowerBound;
-        long upperBound;
+        long lowerBound = 0;
+        long upperBound = -1;
 
         System.out.println("");
 
@@ -75,7 +75,7 @@ public class ProblemSet4 {
             sum += i;
         }
 
-        System.out.printf("\n%d.\n", sum);
+        System.out.printf("\n%,d.\n\n", sum);
 
     }
     
@@ -102,7 +102,7 @@ public class ProblemSet4 {
         for (int i = result.length(); i > 0; i--) {
 
             if (i==1) {
-                System.out.printf("%s.\n", result.substring(i-1, i));
+                System.out.printf("%s.\n\n", result.substring(i-1, i));
             } else {
                 System.out.printf("%s, ", result.substring(i-1, i));
             }
@@ -145,7 +145,7 @@ public class ProblemSet4 {
             // }
         }
 
-        System.out.printf("\n%d.\n", sum);
+        System.out.printf("\n%d.\n\n", sum);
 
     }
     
@@ -178,7 +178,7 @@ public class ProblemSet4 {
         // double newCount = (Double)count;
         // double average = newTotal/newCount;
         double average = total/count;
-        System.out.printf("\n%,.2f.", average);
+        System.out.printf("\n%,.2f.\n\n", average);
 
     }
     
@@ -247,7 +247,7 @@ public class ProblemSet4 {
             currentInt = nextInt;
         }
 
-        System.out.printf("\n%d.\n", nextInt);
+        System.out.printf("\n%d.\n\n", nextInt);
 
     }
     
@@ -278,7 +278,7 @@ public class ProblemSet4 {
 
         }
 
-        System.out.print(".\n");
+        System.out.print(".\n\n");
 
     }
     
@@ -437,8 +437,8 @@ public class ProblemSet4 {
         // System.out.println(numberString.length());
         // System.out.println(numberString.substring(0,2));
 
-
-
+        // boolean isTrue3 = numberString.length() == 16 && (numberString.substring(0,2).equals("51") || numberString.substring(0,2).equals("52") || numberString.substring(0,2).equals("53") || numberString.substring(0,2).equals("54") || numberString.substring(0,2).equals("55"));
+        // System.out.println(isTrue3);
 
 
         // System.out.println(totalSumString);

@@ -92,7 +92,7 @@ public class ProblemSet4 {
 
         do 
         {
-            System.out.print("Positive Integer: ");
+            System.out.print("Positive integer: ");
             integer = in.nextLong();
         } while (integer < 1);
         String result = Long.toString(integer);
@@ -200,9 +200,7 @@ public class ProblemSet4 {
 
         } while (integer < 0);
 
-        if (integer == 1) {
-            isPrime = true;
-        } else if (integer == 0) {
+        if (integer == 1 || integer == 0) {
             isPrime = false;
         }
         
@@ -229,25 +227,24 @@ public class ProblemSet4 {
     
     public void fibonacci() {
 
-        long integer;
-        int prevInt = 0;
-        int currentInt = 1;
-        int nextInt = 1;
+        long input;
+        long prevNum = 0;
+        long currentNum = 1;
+        long nextNum = 1;
 
         do 
         {
             System.out.print("Positive integer: ");
-            integer = in.nextLong();
+            input = in.nextLong();
 
-        } while (integer < 1 || integer > 92);
-
-        for (int i = 1; i < integer; i++) {
-            nextInt = prevInt + currentInt;
-            prevInt = currentInt;
-            currentInt = nextInt;
+        } while (input < 1 || input > 92);
+        for (int i = 1; i < input; i++) {
+            nextNum = prevNum + currentNum;
+            prevNum = currentNum;
+            currentNum = nextNum;
         }
 
-        System.out.printf("\n%d.\n\n", nextInt);
+        System.out.printf("\n%d.\n\n", nextNum);
 
     }
     
@@ -397,30 +394,27 @@ public class ProblemSet4 {
 
         String numberString = Long.toString(number);
 
-        for (int i = 0; i < numberString.length(); i++) {
-            
-            if (i % 2 == 0) {
-                totalSum += Integer.parseInt(numberString.substring(i,i+1));
-            } else {
-
+        for (int i = numberString.length()-2; i >= 0; i -= 2) {
+                
                 temp = Integer.parseInt(numberString.substring(i,i+1))*2;
                 // System.out.println(temp);
 
                 for (int j = 0; j < String.valueOf(temp).length(); j++) {
                     oddSum += Integer.parseInt(String.valueOf(temp).substring(j, j+1));
-                }
-
-            }
+                }            
 
         }
 
-        // System.out.println(totalSum);
-        // System.out.println(oddSum);
+        for (int i = numberString.length()-1; i >= 0; i -= 2) {
+                
+            totalSum += Integer.parseInt(numberString.substring(i,i+1));
+
+        }
 
         totalSum += oddSum;
         totalSumString = String.valueOf(totalSum);
 
-        if ((totalSumString.substring(totalSumString.length()-1, totalSumString.length())).equals("0")) {
+        if (totalSum % 10 == 0) {
             if (numberString.length() == 15 && (numberString.substring(0,2).equals("34") || numberString.substring(0,2).equals("37"))) {
                 System.out.println("\nAmex.\n");
             } else if (numberString.length() == 16 && (numberString.substring(0,2).equals("51") || numberString.substring(0,2).equals("52") || numberString.substring(0,2).equals("53") || numberString.substring(0,2).equals("54") || numberString.substring(0,2).equals("55"))) {
@@ -434,19 +428,5 @@ public class ProblemSet4 {
             System.out.println("\nInvalid.\n");
         }
 
-        // System.out.println(numberString.length());
-        // System.out.println(numberString.substring(0,2));
-
-        // boolean isTrue3 = numberString.length() == 16 && (numberString.substring(0,2).equals("51") || numberString.substring(0,2).equals("52") || numberString.substring(0,2).equals("53") || numberString.substring(0,2).equals("54") || numberString.substring(0,2).equals("55"));
-        // System.out.println(isTrue3);
-
-
-        // System.out.println(totalSumString);
-        // boolean isTrue = totalSumString.substring(totalSumString.length()-1, totalSumString.length()) == "0";
-        // boolean isTrue2 = (totalSumString.substring(totalSumString.length()-1, totalSumString.length())).equals("0");
-        // System.out.println(isTrue);
-        // System.out.println(isTrue2);
-        // System.out.println(totalSumString.substring(totalSumString.length()-1, totalSumString.length()));
-        
     }
 }

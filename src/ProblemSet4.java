@@ -106,6 +106,7 @@ public class ProblemSet4 {
             } else {
                 System.out.printf("%s, ", result.substring(i-1, i));
             }
+
         }
 
     }
@@ -138,11 +139,6 @@ public class ProblemSet4 {
                 sum += additive;
             }
 
-            // if (i==1) {
-            //     System.out.printf("%s.\n", result.substring(i-1, i));
-            // } else {
-            //     System.out.printf("%s, ", result.substring(i-1, i));
-            // }
         }
 
         System.out.printf("\n%d.\n\n", sum);
@@ -174,9 +170,6 @@ public class ProblemSet4 {
 
         } while (integer >= 0);
         
-        // double newTotal = (Double)total;
-        // double newCount = (Double)count;
-        // double average = newTotal/newCount;
         double average = total/count;
         System.out.printf("\n%,.2f.\n\n", average);
 
@@ -238,6 +231,7 @@ public class ProblemSet4 {
             input = in.nextLong();
 
         } while (input < 1 || input > 92);
+
         for (int i = 1; i < input; i++) {
             nextNum = prevNum + currentNum;
             prevNum = currentNum;
@@ -397,7 +391,6 @@ public class ProblemSet4 {
         for (int i = numberString.length()-2; i >= 0; i -= 2) {
                 
                 temp = Integer.parseInt(numberString.substring(i,i+1))*2;
-                // System.out.println(temp);
 
                 for (int j = 0; j < String.valueOf(temp).length(); j++) {
                     oddSum += Integer.parseInt(String.valueOf(temp).substring(j, j+1));
@@ -415,18 +408,34 @@ public class ProblemSet4 {
         totalSumString = String.valueOf(totalSum);
 
         if (totalSum % 10 == 0) {
-            if (numberString.length() == 15 && (numberString.substring(0,2).equals("34") || numberString.substring(0,2).equals("37"))) {
+
+            if (numberString.length() == 15 && (numberString.substring(0,2).equals("34") 
+              || numberString.substring(0,2).equals("37"))) {
+
                 System.out.println("\nAmex.\n");
-            } else if (numberString.length() == 16 && (numberString.substring(0,2).equals("51") || numberString.substring(0,2).equals("52") || numberString.substring(0,2).equals("53") || numberString.substring(0,2).equals("54") || numberString.substring(0,2).equals("55"))) {
+
+            } else if (numberString.length() == 16 && (numberString.substring(0,2).equals("51") 
+              || numberString.substring(0,2).equals("52") || numberString.substring(0,2).equals("53") 
+              || numberString.substring(0,2).equals("54") || numberString.substring(0,2).equals("55"))) {
+
                 System.out.println("\nMastercard.\n");
-            } else if ((numberString.length() == 16 || numberString.length() == 13) && numberString.substring(0,1).equals("4")) {
+
+            } else if ((numberString.length() == 16 || numberString.length() == 13) 
+              && numberString.substring(0,1).equals("4")) {
+
                 System.out.println("\nVisa.\n");
+
             } else {
+
                 System.out.println("\nInvalid.\n");
+
             }
         } else {
+
             System.out.println("\nInvalid.\n");
+
         }
 
     }
+
 }
